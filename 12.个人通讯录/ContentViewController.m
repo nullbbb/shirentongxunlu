@@ -7,8 +7,9 @@
 //
 
 #import "ContentViewController.h"
+#import "AddViewController.h"
 
-@interface ContentViewController ()<UIActionSheetDelegate>
+@interface ContentViewController ()<UIActionSheetDelegate,AddViewControllerDelegate>
 - (IBAction)Logout:(id)sender;
 
 @end
@@ -109,5 +110,14 @@
         //确定注销
         [self.navigationController popViewControllerAnimated:YES];
     }
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    AddViewController *addview=segue.destinationViewController;
+    addview.delegate=self;
+}
+
+-(void)addView:(AddViewController *)addData didAddContactWithname:(NSString *)name phone:(NSString *)phone{
+    
 }
 @end

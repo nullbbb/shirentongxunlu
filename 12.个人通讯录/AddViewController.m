@@ -68,5 +68,10 @@
     
     [self.view endEditing:YES];
     [self.navigationController popViewControllerAnimated:YES];
+    
+    //通知代理
+    if([self.delegate respondsToSelector:@selector(addView:didAddContactWithname:phone:)]){
+        [self.delegate addView:self didAddContactWithname:self.nameFiled.text phone:self.phoneFiled.text];
+    }
 }
 @end
