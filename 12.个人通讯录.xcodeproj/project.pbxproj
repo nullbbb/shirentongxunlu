@@ -18,6 +18,7 @@
 		8934C68A1A615D2B000A7602 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 8934C6861A615D2B000A7602 /* MBProgressHUD+MJ.m */; };
 		8934C68B1A615D2B000A7602 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8934C6871A615D2B000A7602 /* MBProgressHUD.bundle */; };
 		8934C68C1A615D2B000A7602 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8934C6891A615D2B000A7602 /* MBProgressHUD.m */; };
+		8934C68F1A6167B5000A7602 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8934C68E1A6167B5000A7602 /* AddViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		8934C6871A615D2B000A7602 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
 		8934C6881A615D2B000A7602 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		8934C6891A615D2B000A7602 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		8934C68D1A6167B5000A7602 /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
+		8934C68E1A6167B5000A7602 /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +150,8 @@
 				8934C67C1A6149B5000A7602 /* ContentViewController.m */,
 				8934C67E1A614B28000A7602 /* EditViewController.h */,
 				8934C67F1A614B28000A7602 /* EditViewController.m */,
+				8934C68D1A6167B5000A7602 /* AddViewController.h */,
+				8934C68E1A6167B5000A7602 /* AddViewController.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 				89306D201A61458800684124 /* main.m in Sources */,
 				8934C67A1A614991000A7602 /* LoginViewController.m in Sources */,
 				8934C6801A614B28000A7602 /* EditViewController.m in Sources */,
+				8934C68F1A6167B5000A7602 /* AddViewController.m in Sources */,
 				8934C68C1A615D2B000A7602 /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

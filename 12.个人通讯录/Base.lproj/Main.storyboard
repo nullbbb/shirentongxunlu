@@ -43,18 +43,82 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="联系人列表" id="vx7-Ha-aYB">
+                        <barButtonItem key="backBarButtonItem" title="返回" id="Qam-c6-etD"/>
                         <barButtonItem key="leftBarButtonItem" title="注销" id="n2c-Kk-2Sw">
                             <connections>
                                 <action selector="Logout:" destination="fdx-Ki-jQk" id="ddM-Hv-9yu"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZbN-K2-qDq"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZbN-K2-qDq">
+                            <connections>
+                                <segue destination="4fj-PV-n8o" kind="push" id="lIc-gg-myW"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="06D-7V-2NS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-817" y="922"/>
+            <point key="canvasLocation" x="-1273" y="930"/>
+        </scene>
+        <!--添加联系人-->
+        <scene sceneID="6vf-gB-dPi">
+            <objects>
+                <viewController id="4fj-PV-n8o" customClass="AddViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8uk-Nf-clq"/>
+                        <viewControllerLayoutGuide type="bottom" id="HYr-ah-1ti"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nec-0u-ecE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="姓名" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hf8-b9-2hf">
+                                <rect key="frame" x="23" y="104" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入用户名(*)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KOp-Ii-NVb">
+                                <rect key="frame" x="105" y="101" width="193" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="电话" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGy-qt-l3X">
+                                <rect key="frame" x="16" y="151" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入用户名(*)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aq3-Uv-cAr">
+                                <rect key="frame" x="98" y="148" width="193" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="If2-ms-Qo7">
+                                <rect key="frame" x="16" y="209" width="272" height="36"/>
+                                <state key="normal" title="添加">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Login:" destination="qFJ-VD-ftF" eventType="touchUpInside" id="H1J-vy-0SB"/>
+                                    <action selector="add" destination="4fj-PV-n8o" eventType="touchUpInside" id="Af8-eG-Ebt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="添加联系人" id="DX7-Eo-Nz9"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="addBtn" destination="If2-ms-Qo7" id="gpN-G5-9VI"/>
+                        <outlet property="nameFiled" destination="KOp-Ii-NVb" id="91v-AB-h1B"/>
+                        <outlet property="phoneFiled" destination="aq3-Uv-cAr" id="Scx-ko-3ew"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qTa-e2-5Qd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-728" y="952"/>
         </scene>
         <!--登录-->
         <scene sceneID="ajw-gt-Zcd">

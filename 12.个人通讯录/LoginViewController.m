@@ -44,12 +44,14 @@
 
 - (IBAction)remberPwd {
     if (!self.remberPwdSwitch.isOn) {
-        self.autoLoginSwitch.on=NO;
+//        self.autoLoginSwitch.on=NO;
+        [self.autoLoginSwitch setOn:NO animated:YES];
     }
 }
 - (IBAction)autoLogin {
     if (self.autoLoginSwitch.isOn) {
-        self.remberPwdSwitch.on=YES;
+//        self.remberPwdSwitch.on=YES;
+        [self.remberPwdSwitch setOn:YES animated:YES];
     }
 }
 
@@ -71,5 +73,14 @@
         [MBProgressHUD showError:@"用户名密码错误"];
         
     }
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    //拿到目标控制器
+    UIViewController *contentview=segue.destinationViewController;
+    //设置目标控制器的标题
+
+//    contentview.navigationItem.title=[NSString stringWithFormat:@"%@的联系人列表",    self.accoutFiled.text];
+     contentview.title=[NSString stringWithFormat:@"%@的联系人列表",    self.accoutFiled.text];
 }
 @end
