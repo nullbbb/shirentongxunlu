@@ -126,7 +126,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="fdx-Ki-jQk" kind="push" id="tiB-aP-Z6M"/>
+                                    <action selector="Login:" destination="qFJ-VD-ftF" eventType="touchUpInside" id="vLf-Kr-C5l"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -140,6 +140,7 @@
                         <outlet property="autoLoginSwitch" destination="hUA-uS-xW2" id="jd8-Rx-5xm"/>
                         <outlet property="pwdFIled" destination="I78-y6-s3p" id="JWo-Ij-KMz"/>
                         <outlet property="remberPwdSwitch" destination="iBh-qz-PH1" id="hdK-al-Wwg"/>
+                        <segue destination="fdx-Ki-jQk" kind="push" identifier="logintoContent" id="dh7-Vd-6sd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WvO-9Y-NvE" userLabel="First Responder" sceneMemberID="firstResponder"/>
