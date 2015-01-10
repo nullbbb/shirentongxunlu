@@ -43,7 +43,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="联系人列表" id="vx7-Ha-aYB">
-                        <barButtonItem key="leftBarButtonItem" title="注销" id="n2c-Kk-2Sw"/>
+                        <barButtonItem key="leftBarButtonItem" title="注销" id="n2c-Kk-2Sw">
+                            <connections>
+                                <action selector="Logout:" destination="fdx-Ki-jQk" id="ddM-Hv-9yu"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZbN-K2-qDq"/>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
@@ -97,6 +101,9 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iBh-qz-PH1">
                                         <rect key="frame" x="98" y="6" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="remberPwd" destination="qFJ-VD-ftF" eventType="valueChanged" id="vjS-PX-sfx"/>
+                                        </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="自动登录" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M29-Cx-VhB">
                                         <rect key="frame" x="159" y="10" width="70" height="28"/>
@@ -106,11 +113,14 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hUA-uS-xW2">
                                         <rect key="frame" x="249" y="10" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="autoLogin" destination="qFJ-VD-ftF" eventType="valueChanged" id="FKy-lt-wxW"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2XE-EJ-vy8">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2XE-EJ-vy8">
                                 <rect key="frame" x="19" y="255" width="272" height="36"/>
                                 <state key="normal" title="登录">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -124,6 +134,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="登录" id="qq9-vr-iQS"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="LoginBtn" destination="2XE-EJ-vy8" id="r6N-JB-ozt"/>
+                        <outlet property="accoutFiled" destination="OZ0-B0-o9v" id="ibL-7S-o3K"/>
+                        <outlet property="autoLoginSwitch" destination="hUA-uS-xW2" id="jd8-Rx-5xm"/>
+                        <outlet property="pwdFIled" destination="I78-y6-s3p" id="JWo-Ij-KMz"/>
+                        <outlet property="remberPwdSwitch" destination="iBh-qz-PH1" id="hdK-al-Wwg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WvO-9Y-NvE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

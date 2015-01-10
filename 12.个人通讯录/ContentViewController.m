@@ -8,7 +8,8 @@
 
 #import "ContentViewController.h"
 
-@interface ContentViewController ()
+@interface ContentViewController ()<UIActionSheetDelegate>
+- (IBAction)Logout:(id)sender;
 
 @end
 
@@ -97,4 +98,16 @@
 }
 */
 
+- (IBAction)Logout:(id)sender {
+    
+    UIActionSheet *sheet=[[UIActionSheet alloc]initWithTitle:@"确定要取消?" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"确定" otherButtonTitles:nil  , nil];
+    [sheet showInView:self.view];
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex==0) {
+        //确定注销
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
 @end

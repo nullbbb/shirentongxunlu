@@ -8,7 +8,14 @@
 
 #import "LoginViewController.h"
 
-@interface LoginViewController ()
+@interface LoginViewController ()<UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *accoutFiled;
+@property (weak, nonatomic) IBOutlet UITextField *pwdFIled;
+@property (weak, nonatomic) IBOutlet UIButton *LoginBtn;
+@property (weak, nonatomic) IBOutlet UISwitch *remberPwdSwitch;
+- (IBAction)remberPwd;
+@property (weak, nonatomic) IBOutlet UISwitch *autoLoginSwitch;
+- (IBAction)autoLogin;
 
 @end
 
@@ -16,22 +23,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+   //监听通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.accoutFiled];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.pwdFIled];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)textChange{
+    self.LoginBtn.enabled=(self.accoutFiled.text.length&&self.pwdFIled.text.length);
+}
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+    
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)remberPwd {
+    if (!self.remberPwdSwitch.isOn) {
+        self.autoLoginSwitch.on=NO;
+    }
 }
-*/
-
+- (IBAction)autoLogin {
+    if (self.autoLoginSwitch.isOn) {
+        self.remberPwdSwitch.on=YES;
+    }
+}
 @end
