@@ -8,6 +8,7 @@
 
 #import "ContentViewController.h"
 #import "AddViewController.h"
+#import "EditViewController.h"
 #import "ADYContact.h"
 
 @interface ContentViewController ()<UIActionSheetDelegate,AddViewControllerDelegate>
@@ -48,9 +49,10 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *ID=@"contact";
     UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:ID];
-    if (cell==nil) {
-        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:ID];
-    }
+//    if (cell==nil) {
+//        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:ID];
+//    }
+
     
     ADYContact *contact=self.contact[indexPath.row];
     cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
@@ -130,8 +132,17 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    AddViewController *addview=segue.destinationViewController;
-    addview.delegate=self;
+    id vc=segue.destinationViewController;
+
+    if ([vc isKindOfClass:[AddViewController class]]) {
+        AddViewController *addview=segue.destinationViewController;
+        addview.delegate=self;
+    }
+    else if ([vc isKindOfClass:[EditViewController class]]){
+        EditViewController *editview=vc;
+NSIndexPath *path=        [self.tableView indexPathForSelectedRow];
+        editview.contact=self.contact[path.row];
+    }
 }
 
 //-(void)addView:(AddViewController *)addData didAddContactWithname:(NSString *)name phone:(NSString *)phone{

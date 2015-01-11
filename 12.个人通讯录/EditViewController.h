@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class ADYContact;
 @interface EditViewController : UIViewController
-
+@property(nonatomic,strong) ADYContact *contact;
 @end

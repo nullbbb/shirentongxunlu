@@ -7,9 +7,13 @@
 //
 
 #import "EditViewController.h"
+#import "ADYContact.h"
 
 @interface EditViewController ()
-
+@property (weak, nonatomic) IBOutlet UIButton *saveBtn;
+@property (weak, nonatomic) IBOutlet UITextField *nameFiled;
+- (IBAction)edit:(UIBarButtonItem *)item;
+@property (weak, nonatomic) IBOutlet UITextField *phoneFiled;
 @end
 
 @implementation EditViewController
@@ -17,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.nameFiled.text=self.contact.name;
+    self.phoneFiled.text=self.contact.phone;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,4 +40,21 @@
 }
 */
 
+- (IBAction)edit:(UIBarButtonItem *)item {
+    if (self.nameFiled.enabled) {
+        //点击取消
+        self.nameFiled.enabled=self.phoneFiled.enabled=NO;
+        self.saveBtn.hidden=YES;
+        [self.view endEditing:YES];
+          item.title=@"编辑";
+        self.nameFiled.text=self.contact.name;
+        self.phoneFiled.text=self.contact.phone;
+    }else{
+        //点击确定
+        self.nameFiled.enabled=self.phoneFiled.enabled=YES;
+        self.saveBtn.hidden=NO;
+        [self.phoneFiled becomeFirstResponder];
+        item.title=@"取消";
+    }
+}
 @end
