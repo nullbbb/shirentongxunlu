@@ -8,9 +8,11 @@
 
 #import "ContentViewController.h"
 #import "AddViewController.h"
+#import "ADYContact.h"
 
 @interface ContentViewController ()<UIActionSheetDelegate,AddViewControllerDelegate>
 - (IBAction)Logout:(id)sender;
+@property(nonatomic,strong)NSMutableArray *contact;
 
 @end
 
@@ -32,17 +34,32 @@
 }
 
 #pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
+//
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//#warning Potentially incomplete method implementation.
+//    // Return the number of sections.
+//    return 0;
+//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return self.contact.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *ID=@"contact";
+    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:ID];
+    if (cell==nil) {
+        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:ID];
+    }
+    
+    ADYContact *contact=self.contact[indexPath.row];
+    cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+    cell.textLabel.text= contact.name;
+    cell.detailTextLabel.text=contact.phone;
+    
+    
+    
+    return cell;
 }
 
 /*
@@ -117,7 +134,21 @@
     addview.delegate=self;
 }
 
--(void)addView:(AddViewController *)addData didAddContactWithname:(NSString *)name phone:(NSString *)phone{
+//-(void)addView:(AddViewController *)addData didAddContactWithname:(NSString *)name phone:(NSString *)phone{
+//    
+//}
+-(void)addView:(AddViewController *)addData didAddContactWithContact:(ADYContact *)contact{
+//添加模型到控制器
+    [self.contact addObject:contact];
     
+    [self.tableView reloadData];
+    
+}
+
+-(NSMutableArray *)contact{
+    if (_contact==nil) {
+        _contact=[NSMutableArray array];
+    }
+    return _contact;
 }
 @end

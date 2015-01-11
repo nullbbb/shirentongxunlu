@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+
 @class AddViewController;
+@class ADYContact;
 @protocol AddViewControllerDelegate <NSObject>
 
 @optional
--(void)addView:(AddViewController *) addData didAddContactWithname:(NSString *)name phone:(NSString *)phone;
+//-(void)addView:(AddViewController *) addData didAddContactWithname:(NSString *)name phone:(NSString *)phone;
+-(void)addView:(AddViewController *) addData didAddContactWithContact:(ADYContact *)contact;
 
 @end
 @interface AddViewController : UIViewController

@@ -19,6 +19,7 @@
 		8934C68B1A615D2B000A7602 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8934C6871A615D2B000A7602 /* MBProgressHUD.bundle */; };
 		8934C68C1A615D2B000A7602 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8934C6891A615D2B000A7602 /* MBProgressHUD.m */; };
 		8934C68F1A6167B5000A7602 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8934C68E1A6167B5000A7602 /* AddViewController.m */; };
+		89DD6FD31A628F4100932995 /* ADYContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DD6FD21A628F4100932995 /* ADYContact.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		8934C6891A615D2B000A7602 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		8934C68D1A6167B5000A7602 /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
 		8934C68E1A6167B5000A7602 /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
+		89DD6FD11A628F4100932995 /* ADYContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADYContact.h; sourceTree = "<group>"; };
+		89DD6FD21A628F4100932995 /* ADYContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADYContact.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +138,7 @@
 		89306D431A61463800684124 /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				89DD6FD01A628F2400932995 /* Model */,
 				8934C6841A615D2B000A7602 /* MBProgressHUD */,
 				89306D441A61464800684124 /* controller */,
 			);
@@ -166,6 +170,15 @@
 				8934C6891A615D2B000A7602 /* MBProgressHUD.m */,
 			);
 			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		89DD6FD01A628F2400932995 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				89DD6FD11A628F4100932995 /* ADYContact.h */,
+				89DD6FD21A628F4100932995 /* ADYContact.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +286,7 @@
 				89306D231A61458800684124 /* AppDelegate.m in Sources */,
 				89306D201A61458800684124 /* main.m in Sources */,
 				8934C67A1A614991000A7602 /* LoginViewController.m in Sources */,
+				89DD6FD31A628F4100932995 /* ADYContact.m in Sources */,
 				8934C6801A614B28000A7602 /* EditViewController.m in Sources */,
 				8934C68F1A6167B5000A7602 /* AddViewController.m in Sources */,
 				8934C68C1A615D2B000A7602 /* MBProgressHUD.m in Sources */,

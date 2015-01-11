@@ -7,7 +7,7 @@
 //
 
 #import "AddViewController.h"
-
+#import "ADYContact.h"
 @interface AddViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *addBtn;
 @property (weak, nonatomic) IBOutlet UITextField *nameFiled;
@@ -70,8 +70,16 @@
     [self.navigationController popViewControllerAnimated:YES];
     
     //通知代理
-    if([self.delegate respondsToSelector:@selector(addView:didAddContactWithname:phone:)]){
-        [self.delegate addView:self didAddContactWithname:self.nameFiled.text phone:self.phoneFiled.text];
+//    if([self.delegate respondsToSelector:@selector(addView:didAddContactWithContact:contact:)]){
+//        ADYContact *contact=[[ADYContact alloc]init];
+//        contact.name=self.nameFiled.text;
+//        contact.phone=self.phoneFiled.text;
+//        [self.delegate  addView:(AddViewController *) didAddContactWithContact:contact];
+    if ([self.delegate respondsToSelector:@selector(addView:didAddContactWithContact:)]) {
+        ADYContact *contact=[[ADYContact alloc]init];
+                contact.name=self.nameFiled.text;
+                contact.phone=self.phoneFiled.text;
+        [self.delegate addView:self didAddContactWithContact:contact];
     }
 }
 @end
